@@ -30421,3 +30421,5 @@
 2026-08-23 23:16:15,212 - SENSEX_PRO - INFO - Fetching 60d of 15m data for TRENT.NS...
 2026-08-24 00:02:04,784 - SENSEX_PRO - INFO - Telegram Bot Notifier is active.
 2026-08-24 00:02:05,607 - SENSEX_PRO - ERROR - Failed to send Telegram alert: {"ok":false,"error_code":401,"description":"Unauthorized"}
+2026-09-25 16:06:29,956 - SENSEX_PRO - WARNING - Telegram Bot is disabled. Please set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID environment variables.
+2026-09-25 16:12:42,333 - SENSEX_PRO - WARNING - Telegram Bot is disabled. Please set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID environment variables.
