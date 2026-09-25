@@ -1,5 +1,5 @@
 # Testing Strategy
-1. **Unit Tests**: Test indicators, risk math, and agent logic with mocked data.
-2. **Integration Tests**: Test BrokerProvider adapters with sandbox/paper APIs. Test DataProviders with fixed static JSON fixtures.
-3. **E2E Tests**: Test full flow from DataProvider (mocked) to Strategy to Order (mocked broker).
-4. **Backtesting Validation**: Ensure backtest engine matches live paper-trading results over identical historical periods (Golden tests).
+- **Unit Tests**: Test indicator calculations (comparing against known TA-Lib outputs), risk limits, and strict business rules.
+- **Integration Tests**: Test provider adapters (Broker, Data) against sandbox environments.
+- **Backtesting Validation**: Use VectorBT to validate historical performance against known datasets.
+- **Paper Trading**: Run the system in paper trading mode continuously as a form of staging/UAT before any human can enable live mode.

@@ -1,5 +1,6 @@
 # Current Architecture
-- Monolithic Flask app (`app.py`) handling routing, websocket streaming, and simulated market loop.
-- Agents directory containing specialized classes for different analytical tasks.
-- Modules directory containing utilities for external APIs (Dhan, Kite) and technical analysis.
-- Frontend is a standard React+Vite app.
+- **Backend**: Monolithic Flask application with `app.py` handling HTTP routes and SocketIO.
+- **Agents**: Python classes that process dataframes and string inputs.
+- **Modules**: Assorted utilities for data fetching and basic technical analysis.
+- **Frontend**: React application for real-time dashboard display.
+- **Data Storage**: In-memory. No database is currently configured.

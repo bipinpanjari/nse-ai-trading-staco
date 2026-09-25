@@ -1,10 +1,11 @@
 # Target Architecture
-## Clean Architecture Approach
-1. **Core Domain**: Models (Trade, Position, Signal, MarketData).
-2. **Interfaces/Adapters**: `DataProvider` (NSE, Yahoo), `BrokerProvider` (Zerodha, Dhan), `AIProvider` (Ollama, OpenAI).
-3. **Services**: `TradingEngine`, `RiskEngine`, `BacktestEngine`.
-4. **API Layer**: Flask Blueprints (REST + WebSockets).
-5. **Frontend**: React UI consuming API Layer.
-
-## Data Flow
-Market Data Source -> DataProvider Adapter -> Event Bus -> Agents -> Strategy -> Signal -> RiskManager -> Order -> BrokerProvider.
+## Layers
+1. **Frontend**: React/Vite dashboard for research, paper trading, and approval workflows.
+2. **API**: FastAPI or Flask Blueprints routing to specific domains (Analysis, News, Orders).
+3. **Services Layer**:
+   - `MarketDataService` (ingestion, normalization).
+   - `AnalysisService` (pandas-ta, FinBERT integration).
+   - `StrategyEngine` (generates `TradeIdea`).
+   - `RiskEngine` (pre-trade checks, max loss).
+4. **Providers Layer (Adapters)**: `IBKRBroker`, `PaperBroker`, `YahooData`, `NSEData`.
+5. **Storage**: TimescaleDB for time-series, PostgreSQL/SQLite for relational data (Orders, Journals).

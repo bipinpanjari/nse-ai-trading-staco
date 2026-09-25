@@ -1,15 +1,19 @@
 # Implementation Roadmap
-1. **Phase 1: Stabilization & Refactoring**:
-   - Refactor `app.py` into smaller blueprints.
-   - Implement Provider interfaces (Data, Broker).
-   - Add unit tests for core math/risk.
-2. **Phase 2: Persistence & Audit**:
-   - Add SQLite database.
-   - Implement Trade and Position ORM models.
-   - Save agent signals and trades for auditing.
-3. **Phase 3: Security & Auth**:
-   - Add JWT auth.
-   - Secure broker keys.
-4. **Phase 4: Advanced Features**:
-   - Live AI agent optimization.
-   - Advanced reporting frontend.
+## Phase 1: Research Only (Current MVP)
+- Build the data ingestion pipeline (Adapters).
+- Implement TimescaleDB storage.
+- Build the UI for historical charting and basic TA indicators.
+
+## Phase 2: Signal Generation & Backtesting
+- Integrate VectorBT for backtesting.
+- Implement FinBERT for sentiment analysis.
+- Generate `TradeIdea` objects based on rule-based strategies.
+
+## Phase 3: Paper Trading & Human Approval
+- Implement `PaperBroker` adapter.
+- Build UI for reviewing, approving, and rejecting AI trade ideas.
+- Implement strict Risk Engine checks.
+
+## Phase 4: Live Trading (Disabled by Default)
+- Implement `IBKRBroker` or live `DhanBroker` adapters.
+- Add robust account verification and kill switches.
